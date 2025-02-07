@@ -7,6 +7,7 @@ from odoo.exceptions import UserError
 class EstatePropertyOffer(models.Model):
     _name = "estate.property.offer"
     _description = "Real Estate Property Offer"
+    _order = "price desc"
 
     price = fields.Float(string="Price", required=True)
     status = fields.Selection(
@@ -44,8 +45,10 @@ class EstatePropertyOffer(models.Model):
             raise UserError("There is already an accepted offer for this property.")
 
         self.status = 'accepted'
+        self.property_id.state = 'offer_accepted'
         self.property_id.selling_price = self.price
         self.property_id.buyer_id = self.partner_id
 
     def action_refuse(self):
         self.status = 'refused'
+        self.property_id.state = 'canceled'
