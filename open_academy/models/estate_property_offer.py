@@ -1,7 +1,7 @@
 from datetime import timedelta
 
 from odoo import models, fields, api
-from odoo.exceptions import UserError
+from odoo.exceptions import UserError, ValidationError
 
 
 class EstatePropertyOffer(models.Model):
@@ -55,3 +55,15 @@ class EstatePropertyOffer(models.Model):
     def action_refuse(self):
         self.status = 'refused'
         self.property_id.state = 'canceled'
+
+    @api.model
+    def create(self, vals):
+        property_id = self.env['estate.property'].browse(vals['property_id'])
+        existing_offers = self.search([('property_id', '=', property_id.id)])
+
+        if any(offer.price >= vals['price'] for offer in existing_offers):
+            raise ValidationError("You cannot create an offer with a lower amount than an existing one.")
+
+        property_id.state = 'offer_received'
+
+        return super().create(vals)

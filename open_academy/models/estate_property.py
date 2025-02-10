@@ -53,6 +53,7 @@ class EstateProperty(models.Model):
     )
 
     property_type_id = fields.Many2one("estate.property.type", string="Property Type")
+    user_id = fields.Many2one("res.users", string="Salesman", default=lambda self: self.env.user)
     buyer_id = fields.Many2one("res.partner", string="Buyer", copy=False)
     salesperson_id = fields.Many2one("res.users", string="Salesperson", efault=lambda self: self.env.user)
     tag_ids = fields.Many2many("estate.property.tag", string="Tags")
@@ -106,3 +107,9 @@ class EstateProperty(models.Model):
         if not self.buyer_id:
             raise UserError("You must accept an offer before selling.")
         self.state = 'sold'
+
+    @api.ondelete(at_uninstall=False)
+    def _check_property_state(self):
+        for record in self:
+            if record.state not in ['new', 'canceled']:
+                raise ValidationError("You can only delete properties in 'New' or 'Canceled' state.")
