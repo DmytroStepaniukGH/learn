@@ -14,7 +14,7 @@
                             invisible="status == 'accepted' or status == 'refused'"/>
                     <button name="action_refuse" type="object" string="Refuse" class="btn-secondary"
                             invisible="status == 'accepted' or status == 'refused'"/>
-                    <field name="status" invisible="True"/>
+                    <field name="status" column_invisible="True"/>
             </tree>
         </field>
     </record>
