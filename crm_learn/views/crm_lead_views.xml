@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <record id="view_crm_lead_tree_inherit_days_in_work" model="ir.ui.view">
         <field name="name">crm.lead.tree.inherit.days.in.work</field>
@@ -6,6 +7,7 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='name']" position="after">
                 <field name="days_in_work"/>
+                <field name="client_risk_id"/>
             </xpath>
         </field>
     </record>
@@ -18,10 +20,25 @@
              <xpath expr="//field[@name='tag_ids']" position="after">
                 <div>
                     <span>Днів в роботі: </span>
-                    <span><field name="days_in_work"/></span>
+                    <field name="days_in_work"/>
+                </div>
+                 <div>
+                    <span>Ступінь ризику: </span>
+                    <field name="client_risk_id"/>
                 </div>
             </xpath>
         </field>
     </record>
 
+    <record id="view_crm_lead_form" model="ir.ui.view">
+        <field name="name">crm.lead.form</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button name="action_open_client_risk_wizard" type="object" string="Set Risk Level" class="btn-primary"/>
+            </xpath>
+        </field>
+    </record>
+    
 </odoo>

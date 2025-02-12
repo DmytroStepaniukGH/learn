@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_client_risk_wizard_form" model="ir.ui.view">
+        <field name="name">client.risk.wizard.form</field>
+        <field name="model">client.risk.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Set Client Risk Level">
+                <group>
+                    <field name="client_risk_id"/>
+                </group>
+                <footer>
+                    <button string="Cancel" class="btn-secondary"/>
+                    <button string="OK" type="object" name="apply_risk_level" class="btn-primary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>
