@@ -1,0 +1,27 @@
+<odoo>
+    <record id="view_crm_lead_tree_inherit_days_in_work" model="ir.ui.view">
+        <field name="name">crm.lead.tree.inherit.days.in.work</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_tree_view_oppor"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="days_in_work"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_crm_lead_kanban_inherit_days_in_work" model="ir.ui.view">
+        <field name="name">crm.lead.kanban.inherit.days.in.work</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_kanban_view_leads"/>
+        <field name="arch" type="xml">
+             <xpath expr="//field[@name='tag_ids']" position="after">
+                <div>
+                    <span>Днів в роботі: </span>
+                    <span><field name="days_in_work"/></span>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
