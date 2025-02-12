@@ -2,3 +2,4 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_crm_lead,access_crm_lead,model_crm_lead,base.group_user,1,1,1,1
 access_client_risk,client.risk,model_client_risk,base.group_user,1,1,1,1
 access_client_risk_wizard,access_client_risk_wizard,model_client_risk_wizard,base.group_user,1,1,1,1
+access_res_partner,access_res_partner,model_res_partner,base.group_user,1,1,1,1
