@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_customer_credit_form" model="ir.ui.view">
+        <field name="name">customer.credit.form</field>
+        <field name="model">customer.credit</field>
+        <field name="arch" type="xml">
+            <form string="Customer Credit">
+                <sheet>
+                    <group>
+                        <field name="date_issued"/>
+                        <field name="partner_id"/>
+                        <field name="credit_amount"/>
+                        <field name="interest_rate"/>
+                        <field name="interest_amount" readonly="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_customer_credit_tree" model="ir.ui.view">
+        <field name="name">customer.credit.tree</field>
+        <field name="model">customer.credit</field>
+        <field name="arch" type="xml">
+            <tree string="Customer Credits">
+                <field name="date_issued"/>
+                <field name="partner_id"/>
+                <field name="credit_amount"/>
+                <field name="interest_rate"/>
+                <field name="interest_amount"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_customer_credit_pivot" model="ir.ui.view">
+        <field name="name">customer.credit.pivot</field>
+        <field name="model">customer.credit</field>
+        <field name="arch" type="xml">
+            <pivot string="Customer Credit">
+                <field name="partner_id" type="row"/>
+                <field name="credit_amount" type="measure"/>
+                <field name="interest_amount" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="action_customer_credit" model="ir.actions.act_window">
+        <field name="name">Customer Credit</field>
+        <field name="res_model">customer.credit</field>
+        <field name="view_mode">tree,form,pivot</field>
+    </record>
+
+    <menuitem id="menu_customer_credit" name="Customer Credit" parent="account.menu_finance" action="action_customer_credit"/>
+</odoo>

@@ -1,10 +1,9 @@
-from pygments.lexer import default
-
 from odoo import models, fields
+
 
 class ClientRisk(models.Model):
     _name = "client.risk"
-    _description = "Ступінь ризику клієнта"
+    _description = "The degree of risk of the client"
 
     name = fields.Char(string="Risk Level", required=True)
 

@@ -4,11 +4,10 @@ from odoo import models, fields, api
 class CrmLead(models.Model):
     _inherit = 'crm.lead'
 
-    days_in_work = fields.Integer(string='Днів в роботі', compute='_compute_days_in_work', store=True)
+    days_in_work = fields.Integer(string='Days at work', compute='_compute_days_in_work')
 
-    client_risk_id = fields.Many2one(comodel_name="client.risk", string="Ступінь ризику клієнта")
+    client_risk_id = fields.Many2one(comodel_name="client.risk", string="The degree of risk of the client")
 
-    @api.depends('create_date')
     def _compute_days_in_work(self):
         for lead in self:
             if lead.create_date:

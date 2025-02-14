@@ -1,0 +1,114 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* crm_learn
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-14 10:48+0000\n"
+"PO-Revision-Date: 2025-02-14 10:48+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: crm_learn
+#: model_terms:ir.ui.view,arch_db:crm_learn.view_crm_lead_kanban_inherit_days_in_work
+msgid "<span>Days at work: </span>"
+msgstr "<span>Днів в роботі: </span>"
+
+#. module: crm_learn
+#: model_terms:ir.ui.view,arch_db:crm_learn.view_crm_lead_kanban_inherit_days_in_work
+msgid "<span>Degree of risk: </span>"
+msgstr "<span>Ступінь ризику: </span>"
+
+#. module: crm_learn
+#: model_terms:ir.ui.view,arch_db:crm_learn.view_client_risk_wizard_form
+msgid "Cancel"
+msgstr "Скасувати"
+
+#. module: crm_learn
+#: model:ir.model,name:crm_learn.model_res_partner
+msgid "Contact"
+msgstr "Контакт"
+
+#. module: crm_learn
+#: model:ir.model.fields,field_description:crm_learn.field_client_risk__create_uid
+#: model:ir.model.fields,field_description:crm_learn.field_client_risk_wizard__create_uid
+msgid "Created by"
+msgstr "Створено"
+
+#. module: crm_learn
+#: model:ir.model.fields,field_description:crm_learn.field_client_risk__create_date
+#: model:ir.model.fields,field_description:crm_learn.field_client_risk_wizard__create_date
+msgid "Created on"
+msgstr "Створено на"
+
+#. module: crm_learn
+#: model:ir.model.fields,field_description:crm_learn.field_crm_lead__days_in_work
+msgid "Days at work"
+msgstr "Днів в роботі"
+
+#. module: crm_learn
+#: model:ir.model.fields,field_description:crm_learn.field_client_risk__display_name
+#: model:ir.model.fields,field_description:crm_learn.field_client_risk_wizard__display_name
+msgid "Display Name"
+msgstr "Відображуване ім'я"
+
+#. module: crm_learn
+#: model:ir.model.fields,field_description:crm_learn.field_client_risk__id
+#: model:ir.model.fields,field_description:crm_learn.field_client_risk_wizard__id
+msgid "ID"
+msgstr "ID"
+
+#. module: crm_learn
+#: model:ir.model.fields,field_description:crm_learn.field_client_risk__write_uid
+#: model:ir.model.fields,field_description:crm_learn.field_client_risk_wizard__write_uid
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: crm_learn
+#: model:ir.model.fields,field_description:crm_learn.field_client_risk__write_date
+#: model:ir.model.fields,field_description:crm_learn.field_client_risk_wizard__write_date
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: crm_learn
+#: model:ir.model,name:crm_learn.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr "Lead/Opportunity"
+
+#. module: crm_learn
+#: model_terms:ir.ui.view,arch_db:crm_learn.view_client_risk_wizard_form
+msgid "OK"
+msgstr "Підтвердити"
+
+#. module: crm_learn
+#: model:ir.model.fields,field_description:crm_learn.field_client_risk__name
+msgid "Risk Level"
+msgstr "Ступінь ризику"
+
+#. module: crm_learn
+#: model_terms:ir.ui.view,arch_db:crm_learn.view_client_risk_wizard_form
+msgid "Set Client Risk Level"
+msgstr "Встановлення ступеня ризику клієнта"
+
+#. module: crm_learn
+#: model_terms:ir.ui.view,arch_db:crm_learn.view_crm_lead_form
+msgid "Set Risk Level"
+msgstr "Встановити ступінь ризику"
+
+#. module: crm_learn
+#: model:ir.model,name:crm_learn.model_client_risk
+#: model:ir.model.fields,field_description:crm_learn.field_client_risk_wizard__client_risk_id
+#: model:ir.model.fields,field_description:crm_learn.field_crm_lead__client_risk_id
+msgid "The degree of risk of the client"
+msgstr "Ступінь ризику клієнта"
+
+#. module: crm_learn
+#: model:ir.model,name:crm_learn.model_client_risk_wizard
+msgid "Wizard for choosing the degree of risk of the client"
+msgstr "Візард вибору ступеня ризику клієнта"

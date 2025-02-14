@@ -19,13 +19,21 @@
         <field name="arch" type="xml">
              <xpath expr="//field[@name='tag_ids']" position="after">
                 <div>
-                    <span>Днів в роботі: </span>
+                    <span>Days at work: </span>
                     <field name="days_in_work"/>
                 </div>
                  <div>
-                    <span>Ступінь ризику: </span>
+                    <span>Degree of risk: </span>
                     <field name="client_risk_id"/>
                 </div>
+<!--                <div>-->
+<!--                    <t t-esc="'Days at work: '| translate"/>-->
+<!--                    <field name="days_in_work"/>-->
+<!--                </div>-->
+<!--                <div>-->
+<!--                    <t t-esc="'Degree of risk:' | translate"/>-->
+<!--                    <field name="client_risk_id"/>-->
+<!--                </div>-->
             </xpath>
         </field>
     </record>
@@ -36,7 +44,7 @@
         <field name="inherit_id" ref="crm.crm_lead_view_form"/>
         <field name="arch" type="xml">
             <xpath expr="//header" position="inside">
-                <button name="action_open_client_risk_wizard" type="object" string="Set Risk Level" class="btn-primary"/>
+                <button name="action_open_client_risk_wizard" type="object" string="Set Risk Level" class="btn-primary" translate="true"/>
             </xpath>
         </field>
     </record>

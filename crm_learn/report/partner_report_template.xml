@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="partner_pdf_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="partner">
+                <div class="page">
+                    <h2 style="font-weight: bold;"><t t-esc="partner.name"/></h2>
+                    <p>Phone: <t t-esc="partner.phone"/></p>
+                    <p>Email: <t t-esc="partner.email"/></p>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

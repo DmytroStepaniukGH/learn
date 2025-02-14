@@ -2,11 +2,11 @@ from odoo import models, fields, api
 
 class ClientRiskWizard(models.TransientModel):
     _name = "client.risk.wizard"
-    _description = "Візард для вибору ступеня ризику клієнта"
+    _description = "Wizard for choosing the degree of risk of the client"
 
     client_risk_id = fields.Many2one(
         comodel_name="client.risk",
-        string="Ступінь ризику клієнта",
+        string="The degree of risk of the client",
         required=True
     )
 

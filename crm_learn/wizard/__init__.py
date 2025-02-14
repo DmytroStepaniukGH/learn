@@ -1,1 +1,1 @@
-from . import client_risk_wizard
+from . import models
