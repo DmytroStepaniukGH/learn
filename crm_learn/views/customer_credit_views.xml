@@ -4,18 +4,24 @@
         <field name="name">customer.credit.form</field>
         <field name="model">customer.credit</field>
         <field name="arch" type="xml">
-            <form string="Customer Credit">
-                <sheet>
-                    <group>
-                        <field name="date_issued"/>
-                        <field name="partner_id"/>
-                        <field name="credit_amount"/>
-                        <field name="interest_rate"/>
-                        <field name="interest_amount" readonly="1"/>
-                    </group>
-                </sheet>
-            </form>
-        </field>
+                <form string="Customer Credit">
+                    <sheet>
+                        <group>
+                            <field name="date_issued"/>
+                            <field name="partner_id"/>
+                        </group>
+                        <group>
+                            <field name="credit_amount"/>
+                            <field name="interest_rate"/>
+                            <field name="interest_amount" readonly="1"/>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
     </record>
 
     <record id="view_customer_credit_tree" model="ir.ui.view">
