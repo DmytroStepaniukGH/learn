@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_company_form_inherit_telegram" model="ir.ui.view">
+        <field name="name">res.company.form.inherit.telegram</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='currency_id']" position="after">
+                <field name="telegram_token"/>
+            </xpath>
+            <xpath expr="//sheet" position="before">
+                <header>
+                    <button name="crm_learn.action_open_telegram_chats"
+                            type="action"
+                            class="oe_stat_button">
+                        <div class="o_stat_info">
+                            <field name="telegram_chat_count"/>
+                            <span> Telegram Chats</span>
+                        </div>
+                    </button>
+
+                    <button name="action_get_incoming_messages"
+                            type="object"
+                            string="Get Incoming Messages"
+                            class="btn btn-primary"/>
+                </header>
+            </xpath>
+        </field>
+    </record>
+</odoo>

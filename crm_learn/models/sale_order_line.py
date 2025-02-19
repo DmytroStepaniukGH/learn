@@ -1,19 +1,13 @@
-from odoo import models, api, fields
-import logging
+from odoo import models, api
 
-
-_logger = logging.getLogger(__name__)
 
 class SaleOrderLine(models.Model):
-    _inherit = "sale.order.line"
-    _description = "Adding order complexity"
+    _inherit = 'sale.order.line'
 
-    complexity = fields.Float(related="order_id.complexity", store=True)
+    @api.onchange('price_unit')
+    def _onchange_price(self):
+        complexity = self.order_id.complexity
 
-    #not work - need fix
-    @api.onchange('product_id')
-    def _onchange_product_id(self):
-        _logger.info("ONCHANGE product_id ВИКЛИКАНО")
-
-        self.price_unit = self.price_unit * self.complexity
-        _logger.info(f"Новий price_unit: {self.price_unit} для {self.product_id.name}")
+        if self.price_unit and not self._context.get('onchange_price_done'):
+            self = self.with_context(onchange_price_done=True)  # Prevents infinite loop
+            self.price_unit = self.price_unit * complexity

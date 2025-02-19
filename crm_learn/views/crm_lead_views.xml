@@ -26,14 +26,6 @@
                     <span>Degree of risk: </span>
                     <field name="client_risk_id"/>
                 </div>
-<!--                <div>-->
-<!--                    <t t-esc="'Days at work: '| translate"/>-->
-<!--                    <field name="days_in_work"/>-->
-<!--                </div>-->
-<!--                <div>-->
-<!--                    <t t-esc="'Degree of risk:' | translate"/>-->
-<!--                    <field name="client_risk_id"/>-->
-<!--                </div>-->
             </xpath>
         </field>
     </record>

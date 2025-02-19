@@ -7,6 +7,8 @@
     'data': ['views/crm_lead_views.xml',
              'views/customer_credit_views.xml',
              'views/sale_order_form_inherit_complexity.xml',
+             'views/telegram_chat_views.xml',
+             'views/res_company_views.xml',
              'report/partner_report.xml',
              'report/partner_report_template.xml',
              'wizard/views/client_risk_wizard_views.xml',
