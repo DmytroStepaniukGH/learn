@@ -9,8 +9,8 @@ class CustomerCredit(models.Model):
 
     date_issued = fields.Date(string="Date Issued", default=fields.Date.today(), required=True)
     partner_id = fields.Many2one("res.partner", string="Customer", required=True)
-    credit_amount = fields.Float(string="Credit Amount", required=True, track_visibility="onchange")
-    interest_rate = fields.Float(string="Interest Rate (%)", required=True, track_visibility="onchange")
+    credit_amount = fields.Float(string="Credit Amount", required=True, tracking=True)
+    interest_rate = fields.Float(string="Interest Rate (%)", required=True, tracking=True)
     interest_amount = fields.Float(string="Interest Amount", compute="_compute_interest_amount",
                                    store=True, track_visibility="onchange")
 
