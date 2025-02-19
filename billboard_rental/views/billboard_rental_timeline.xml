@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_billboard_rental_timeline" model="ir.ui.view">
+        <field name="name">billboard.rental.timeline</field>
+        <field name="model">billboard.rental</field>
+        <field name="arch" type="xml">
+            <timeline date_start="start_date"
+                      date_stop="end_date"
+                      default_group_by="billboard_id"
+                      event_open_popup="true"
+                      colors="#2ecb71: state == 'confirmed'; #ec7063: state == 'draft'">
+                <field name="billboard_id"/>
+            </timeline>
+        </field>
+    </record>
+
+    <record id="action_billboard_rental_timeline" model="ir.actions.act_window">
+        <field name="name">Billboard Rental Timeline</field>
+        <field name="res_model">billboard.rental</field>
+        <field name="view_mode">timeline</field>
+        <field name="view_id" ref="view_billboard_rental_timeline"/>
+    </record>
+
+    <menuitem id="menu_billboard_rental_timeline"
+              name="Billboard Rental Timeline"
+              parent="menu_billboard_root"
+              action="action_billboard_rental_timeline"/>
+</odoo>

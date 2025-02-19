@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_billboard_rental_form" model="ir.ui.view">
+        <field name="name">billboard.rental.form</field>
+        <field name="model">billboard.rental</field>
+        <field name="arch" type="xml">
+            <form string="Billboard Rental">
+                <sheet>
+                    <header>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,confirmed"/>
+                        <button name="action_confirm" type="object" string="Confirm" class="btn-primary"
+                                invisible="state == 'confirmed'"/>
+                    </header>
+                    <group>
+                        <field name="billboard_id"/>
+                        <field name="start_date"/>
+                        <field name="end_date"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_billboard_rental_tree" model="ir.ui.view">
+        <field name="name">billboard.rental.tree</field>
+        <field name="model">billboard.rental</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="billboard_id"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_billboard_rental" model="ir.actions.act_window">
+        <field name="name">Billboard Rentals</field>
+        <field name="res_model">billboard.rental</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_billboard_rental"
+              name="Billboard Rentals"
+              parent="menu_billboard_root"
+              action="action_billboard_rental"/>
+</odoo>
